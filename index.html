@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>dice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="title">Dice Game</h1>
+    <img id="dice-image" src="default.png" alt="dice" class="dice-image"/>
+    <button class="btn" onclick="roll()">Roll Dice</button>
+    <script>
+        function roll(){
+            const min = 1;
+            const max = 6;
+
+            const randomNumber = Math.round(Math.random() * (max-min)) + min;
+            console.log(randomNumber);
+
+            const imgElement = document.getElementById('dice-image');
+
+            switch(randomNumber){
+                case 1:
+                    imgElement.src='one.png';
+                    break;
+                case 2:
+                    imgElement.src='two.png';
+                    break;
+                case 3:
+                    imgElement.src='three.png';
+                    break;
+                case 4:
+                    imgElement.src='four.png';
+                    break;
+                case 5:
+                    imgElement.src='five.png';
+                    break;
+                case 6:
+                    imgElement.src='six.png';
+                    break;
+                default:
+                    imgElement.src='default.png';
+            }
+        }
+    </script>
+</body>
+</html>
+
